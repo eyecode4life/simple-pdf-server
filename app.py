@@ -1,4 +1,3 @@
-
 from flask import Flask, send_from_directory, render_template_string, send_file
 import os
 import fitz  # PyMuPDF
@@ -53,8 +52,6 @@ def list_books():
     </body>
     </html>
     '''
-    
-    #<img src="{{ url_for('get_pdf_thumbnail', filename=pdf_file) }}" alt="Cover of {{ pdf_file }}">
     # Render the template with the list of PDF files
     return render_template_string(html_template, pdf_files=pdf_files)
 
@@ -92,5 +89,4 @@ def get_pdf_cover(filename):
 if __name__ == '__main__':
     import os
     app.run(host='0.0.0.0', debug=True)
-
 
